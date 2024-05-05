@@ -34,7 +34,7 @@ const Services = () => {
                                 <h2 className="card-title">{service.title}</h2>
                                 <p className="text-[#FF3811] font-medium">Price : {service.price}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`checkout/${service._id}`}>
+                                    <Link to={`book/${service._id}`}>
                                        <FaArrowRight className="text-red-600 text-xl"></FaArrowRight>
                                     </Link>
                                    
