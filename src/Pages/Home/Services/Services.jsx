@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const Services = () => {
-    const [services, setServices] = useState([]);
+    const [ services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(error => console.error(error))
@@ -33,9 +34,9 @@ const Services = () => {
                                 <h2 className="card-title">{service.title}</h2>
                                 <p className="text-[#FF3811] font-medium">Price : {service.price}</p>
                                 <div className="card-actions justify-end">
-                                    <button>
+                                    <Link to={`checkout/${service._id}`}>
                                        <FaArrowRight className="text-red-600 text-xl"></FaArrowRight>
-                                    </button>
+                                    </Link>
                                    
                                 </div>
                             </div>
